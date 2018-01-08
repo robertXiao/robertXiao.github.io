@@ -2406,8 +2406,8 @@ color
   border-bottom: none;
 }
 .archives .archive-article-title {
-  font-size: 16px;
-  color: #999;
+  font-size: 18px;
+  color: #020202;
   -webkit-transition: color 0.3s;
   -moz-transition: color 0.3s;
   -ms-transition: color 0.3s;
@@ -2418,7 +2418,7 @@ color
 }
 .archives .archive-article-title span {
   display: block;
-  color: #a8a8a8;
+  color: #fff;
   font-size: 12px;
   line-height: 14px;
   height: 7px;
@@ -2446,7 +2446,7 @@ color
   width: auto;
 }
 .archive-article-inner .article-meta .article-date time {
-  color: #020202;
+  color: #fff;
 }
 .archive-article-inner .article-meta .archive-article-date,
 .archive-article-inner .article-meta .article-tag-list {
@@ -2455,7 +2455,7 @@ color
   display: inline-block;
   vertical-align: middle;
   zoom: 1;
-  color: #999;
+  color: #fff;
   font-size: 14px;
 }
 .archive-article-inner .article-meta .archive-article-date {
@@ -2466,7 +2466,7 @@ color
 }
 .archive-article-inner .article-meta .archive-article-date time:before {
   content: "\f073";
-  color: #999;
+  color: #fff;
   position: relative;
   margin-right: 10px;
   font: 16px FontAwesome;
@@ -3570,8 +3570,8 @@ a.gitment-editor-footer-tip:hover {
   border-bottom: none;
 }
 .archives .archive-article-title {
-  font-size: 16px;
-  color: #999;
+  font-size: 18px;
+  color: #020202;
   -webkit-transition: color 0.3s;
   -moz-transition: color 0.3s;
   -ms-transition: color 0.3s;
@@ -3582,7 +3582,7 @@ a.gitment-editor-footer-tip:hover {
 }
 .archives .archive-article-title span {
   display: block;
-  color: #a8a8a8;
+  color: #fff;
   font-size: 12px;
   line-height: 14px;
   height: 7px;
@@ -3610,7 +3610,7 @@ a.gitment-editor-footer-tip:hover {
   width: auto;
 }
 .archive-article-inner .article-meta .article-date time {
-  color: #020202;
+  color: #fff;
 }
 .archive-article-inner .article-meta .archive-article-date,
 .archive-article-inner .article-meta .article-tag-list {
@@ -3619,7 +3619,7 @@ a.gitment-editor-footer-tip:hover {
   display: inline-block;
   vertical-align: middle;
   zoom: 1;
-  color: #999;
+  color: #fff;
   font-size: 14px;
 }
 .archive-article-inner .article-meta .archive-article-date {
@@ -3630,7 +3630,7 @@ a.gitment-editor-footer-tip:hover {
 }
 .archive-article-inner .article-meta .archive-article-date time:before {
   content: "\f073";
-  color: #999;
+  color: #fff;
   position: relative;
   margin-right: 10px;
   font: 16px FontAwesome;
@@ -5101,11 +5101,11 @@ body {
   -moz-background-size: cover;
   background-size: cover;
   background-attachment: fixed;
-  color: #000;
+  color: #020202;
 }
 #container .left-col {
   background: none !important;
 }
 .article-title {
-  color: #000;
+  color: #020202;
 }
