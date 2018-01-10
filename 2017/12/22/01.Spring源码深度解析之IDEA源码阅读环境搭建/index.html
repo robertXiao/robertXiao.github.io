@@ -3,19 +3,24 @@
 <head>
   <meta charset="utf-8">
   
-  <title>我的文章1 | 我的博客</title>
+  <title>01.Spring源码深度解析之IDEA源码阅读环境搭建 | 我的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;三月，醉一场青春的流年。慢步在三月的春光里，走走停停，看花开嫣然，看春雨绵绵，感受春风拂面，春天，就是青春的流年。青春，是人生中最美的风景。青春，是一场花开的遇见；青春，是一场痛并快乐着的旅行；青春，是一场轰轰烈烈的比赛；青春，是一场鲜衣奴马的争荣岁月；青春，是一场风花雪月的光阴。">
+  <meta name="description" content="前言相信大部分人在面试过程中都会被问到是否阅读过Spring源码 Spring底层如何实现 Spring使用了哪些设计模式等问题，通常遇到这种问题我是直接选择死亡。因为开始我觉的花时间去研究一门框架不如多学习几个开源框架性价比来的高，可能花几天时间你能用一个新框架撸码，但是花几天时间研究Spring真的研究不出什么道来，不过渐渐的我发现程序员如果想自身的核心竞争力除了增加知识的广度外更重要的是能在">
+<meta name="keywords" content="Spring源码深度解析,Spring源码环境搭建">
 <meta property="og:type" content="article">
-<meta property="og:title" content="我的文章1">
-<meta property="og:url" content="http://robertXiao.com/2018/01/08/文章1/index.html">
+<meta property="og:title" content="01.Spring源码深度解析之IDEA源码阅读环境搭建">
+<meta property="og:url" content="http://robertXiao.com/2017/12/22/01.Spring源码深度解析之IDEA源码阅读环境搭建/index.html">
 <meta property="og:site_name" content="我的博客">
-<meta property="og:description" content="&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;三月，醉一场青春的流年。慢步在三月的春光里，走走停停，看花开嫣然，看春雨绵绵，感受春风拂面，春天，就是青春的流年。青春，是人生中最美的风景。青春，是一场花开的遇见；青春，是一场痛并快乐着的旅行；青春，是一场轰轰烈烈的比赛；青春，是一场鲜衣奴马的争荣岁月；青春，是一场风花雪月的光阴。">
+<meta property="og:description" content="前言相信大部分人在面试过程中都会被问到是否阅读过Spring源码 Spring底层如何实现 Spring使用了哪些设计模式等问题，通常遇到这种问题我是直接选择死亡。因为开始我觉的花时间去研究一门框架不如多学习几个开源框架性价比来的高，可能花几天时间你能用一个新框架撸码，但是花几天时间研究Spring真的研究不出什么道来，不过渐渐的我发现程序员如果想自身的核心竞争力除了增加知识的广度外更重要的是能在">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-01-08T03:47:42.218Z">
+<meta property="og:image" content="http://img.blog.csdn.net/20171222120448818?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvUm9iZXJ0b0h1YW5n/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
+<meta property="og:image" content="http://img.blog.csdn.net/20171222120546371?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvUm9iZXJ0b0h1YW5n/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
+<meta property="og:image" content="http://img.blog.csdn.net/20171222120610522?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvUm9iZXJ0b0h1YW5n/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
+<meta property="og:updated_time" content="2018-01-08T02:26:18.819Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="我的文章1">
-<meta name="twitter:description" content="&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;三月，醉一场青春的流年。慢步在三月的春光里，走走停停，看花开嫣然，看春雨绵绵，感受春风拂面，春天，就是青春的流年。青春，是人生中最美的风景。青春，是一场花开的遇见；青春，是一场痛并快乐着的旅行；青春，是一场轰轰烈烈的比赛；青春，是一场鲜衣奴马的争荣岁月；青春，是一场风花雪月的光阴。">
+<meta name="twitter:title" content="01.Spring源码深度解析之IDEA源码阅读环境搭建">
+<meta name="twitter:description" content="前言相信大部分人在面试过程中都会被问到是否阅读过Spring源码 Spring底层如何实现 Spring使用了哪些设计模式等问题，通常遇到这种问题我是直接选择死亡。因为开始我觉的花时间去研究一门框架不如多学习几个开源框架性价比来的高，可能花几天时间你能用一个新框架撸码，但是花几天时间研究Spring真的研究不出什么道来，不过渐渐的我发现程序员如果想自身的核心竞争力除了增加知识的广度外更重要的是能在">
+<meta name="twitter:image" content="http://img.blog.csdn.net/20171222120448818?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvUm9iZXJ0b0h1YW5n/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
   
     <link rel="alternative" href="/atom.xml" title="我的博客" type="application/atom+xml">
   
@@ -253,11 +258,11 @@
         </header>                
     </div>
 </nav>
-      <div class="body-wrap"><article id="post-文章1" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-01.Spring源码深度解析之IDEA源码阅读环境搭建" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2018/01/08/文章1/" class="article-date">
-      <time datetime="2018-01-08T03:43:10.300Z" itemprop="datePublished">2018-01-08</time>
+      <a href="/2017/12/22/01.Spring源码深度解析之IDEA源码阅读环境搭建/" class="article-date">
+      <time datetime="2017-12-22T04:00:00.000Z" itemprop="datePublished">2017-12-22</time>
 </a>
     </div>
   
@@ -270,7 +275,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      我的文章1
+      01.Spring源码深度解析之IDEA源码阅读环境搭建
     </h1>
   
 
@@ -278,8 +283,16 @@
       
       <div class="article-info article-info-post">
         
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/Spring源码深度解析/">Spring源码深度解析</a>
+    </div>
+
 
         
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Spring源码深度解析/">Spring源码深度解析</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Spring源码环境搭建/">Spring源码环境搭建</a></li></ul>
+    </div>
+
         <div class="clearfix"></div>
       </div>
       
@@ -287,7 +300,21 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;三月，醉一场青春的流年。慢步在三月的春光里，走走停停，看花开嫣然，看春雨绵绵，感受春风拂面，春天，就是青春的流年。青春，是人生中最美的风景。青春，是一场花开的遇见；青春，是一场痛并快乐着的旅行；青春，是一场轰轰烈烈的比赛；青春，是一场鲜衣奴马的争荣岁月；青春，是一场风花雪月的光阴。<strong><a id="more"></a></strong><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;青春往事，多么甜蜜；青春岁月，多么靓丽；青春流年，如火如荼。青春里，我们向着梦想前进。跌倒过，伤心过，快乐过，痛苦过，孤独过，彷徨过，迷茫过。总是，在悠悠的岁月中徘徊；总是，在如春的生命中成长；总是，在季节的交替中感悟人生四季的美妙与韵律；总是，在多愁善感中体悟青春的美好与无奈。<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;三月，醉一场青春的流年。慢步在三月的春光里，走走停停，看花开嫣然，看春雨绵绵，感受春风拂面，春天，就是青春的流年。青春，是人生中最美的风景。青春，是一场花开的遇见；青春，是一场痛并快乐着的旅行；青春，是一场轰轰烈烈的比赛；青春，是一场鲜衣奴马的争荣岁月；青春，是一场风花雪月的光阴。<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;青春往事，多么甜蜜；青春岁月，多么靓丽；青春流年，如火如荼。青春里，我们向着梦想前进。跌倒过，伤心过，快乐过，痛苦过，孤独过，彷徨过，迷茫过。总是，在悠悠的岁月中徘徊；总是，在如春的生命中成长；总是，在季节的交替中感悟人生四季的美妙与韵律；总是，在多愁善感中体悟青春的美好与无奈。<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;三月，醉一场青春的流年。慢步在三月的春光里，走走停停，看花开嫣然，看春雨绵绵，感受春风拂面，春天，就是青春的流年。青春，是人生中最美的风景。青春，是一场花开的遇见；青春，是一场痛并快乐着的旅行；青春，是一场轰轰烈烈的比赛；青春，是一场鲜衣奴马的争荣岁月；青春，是一场风花雪月的光阴。<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;青春往事，多么甜蜜；青春岁月，多么靓丽；青春流年，如火如荼。青春里，我们向着梦想前进。跌倒过，伤心过，快乐过，痛苦过，孤独过，彷徨过，迷茫过。总是，在悠悠的岁月中徘徊；总是，在如春的生命中成长；总是，在季节的交替中感悟人生四季的美妙与韵律；总是，在多愁善感中体悟青春的美好与无奈。<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;三月，醉一场青春的流年。慢步在三月的春光里，走走停停，看花开嫣然，看春雨绵绵，感受春风拂面，春天，就是青春的流年。青春，是人生中最美的风景。青春，是一场花开的遇见；青春，是一场痛并快乐着的旅行；青春，是一场轰轰烈烈的比赛；青春，是一场鲜衣奴马的争荣岁月；青春，是一场风花雪月的光阴。<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;青春往事，多么甜蜜；青春岁月，多么靓丽；青春流年，如火如荼。青春里，我们向着梦想前进。跌倒过，伤心过，快乐过，痛苦过，孤独过，彷徨过，迷茫过。总是，在悠悠的岁月中徘徊；总是，在如春的生命中成长；总是，在季节的交替中感悟人生四季的美妙与韵律；总是，在多愁善感中体悟青春的美好与无奈。</p>
+        <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>相信大部分人在面试过程中都会被问到是否阅读过Spring源码 Spring底层如何实现 Spring使用了哪些设计模式等问题，通常遇到这种问题我是直接选择死亡。因为开始我觉的花时间去研究一门框架不如多学习几个开源框架性价比来的高，可能花几天时间你能用一个新框架撸码，但是花几天时间研究Spring真的研究不出什么道来，不过渐渐的我发现程序员如果想自身的核心竞争力除了增加知识的广度外更重要的是能在某个方面有个深度。我想百分90的程序员都有在用Spring框架但是可能只有百分10不到的程序员研究过Spring框架，它是个十分成熟的开源框架，有着各路武林高手多年积淀下来的精华，为了应付面试也好提高自身编程思想也好我认为研究Spring源码还是很有必要的，因为阅读源码等同于你获得了一次和大师学习的机会，站在巨人的肩膀上才会看的更远<br><strong><a id="more"></a></strong><br>阅读Spring源码是一万次的心跳呼吸也是一万次的低头叹息，感觉还是很吃力特对对我这种没有源码阅读经验的菜鸡而言，但是每次坚持下来都会有意外的收获，读书百遍其义自见吧。在源码阅读过程中主要参考了郝佳的Spring源码深度解析，从代码角度进行剖析由浅入深，然后看源码过程中顺带看了些设计模式的内容，主要参考了程杰的大话设计模式，再然后还参考了数不清的技术博客，我们不生产水我们只是大自然的搬运工，我只是对这些大佬的见解进行汇总，如有侵权请及时联系。然后顺带安利个比较实用的UML图软件Visual Paradigm，页面简洁功能强大，谁用谁知道</p>
+<p>然后再分享个看源码的经验吧，因为Spring源码层级结构较深，很容易就找不到自己想要定位的类，巧用IDEA的书签功能可以很好的解决该问题，IDEA的类图谱功能可以帮助我们理清类之间的依赖关系，Find Usages可以帮我们理清类之间的调用关系。再然后来个免责声明吧，本人不是高级软件开发工程师也不是什么架构师，只是一个刚刚学Java的菜鸡，菜的抠脚的那种，但是该博客是用心码出来的，所以如果你在看该博客有任何被坑的地方还请您多多担待，最后希望各位大佬不吝赐教不胜感激…</p>
+<p>博客源码地址:<a href="https://github.com/RobertoHuang/spring-framework.git" target="_blank" rel="noopener">https://github.com/RobertoHuang/spring-framework.git</a></p>
+<h1 id="Spring整体架构"><a href="#Spring整体架构" class="headerlink" title="Spring整体架构"></a>Spring整体架构</h1><p><img src="http://img.blog.csdn.net/20171222120448818?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvUm9iZXJ0b0h1YW5n/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="Spring整体架构"><br>网上找了一张Spring的架构框图，可以看出模块构成关系，了解即可不必过于纠结</p>
+<h1 id="Spring源码阅读环境构建"><a href="#Spring源码阅读环境构建" class="headerlink" title="Spring源码阅读环境构建"></a>Spring源码阅读环境构建</h1><h2 id="下载Spring源码"><a href="#下载Spring源码" class="headerlink" title="下载Spring源码"></a>下载Spring源码</h2><p>现在大型开源项目都由Github托管了，Spring也不例外。所以我们可以直接在Github上搜索spring-framework找到Spring项目下载ZIP包，或者直接通过以下命令检出Spring源码，如果对GIT还不了解的同学可以百度搜索廖雪峰GIT教程，相信很快就能上手<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone https://github.com/spring-projects/spring-framework.git</span><br></pre></td></tr></table></figure></p>
+<h2 id="JDK版本"><a href="#JDK版本" class="headerlink" title="JDK版本"></a>JDK版本</h2><p>最新版的Spring源码编译要求jdk1.8+版本，至于JDK环境变量配置在此就不赘述了</p>
+<h2 id="Gradle环境"><a href="#Gradle环境" class="headerlink" title="Gradle环境"></a>Gradle环境</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">配置:</span><br><span class="line">1.创建系统环境变量:GRADLE_HOME 指向Gradle安装目录</span><br><span class="line">2.配置path:新增%GRADLE_HOME%\bin;</span><br><span class="line">3.配置完成后打开CMD输入gradle -v看是否成功</span><br></pre></td></tr></table></figure>
+<h2 id="IntelliJ-IDEA版本"><a href="#IntelliJ-IDEA版本" class="headerlink" title="IntelliJ IDEA版本"></a>IntelliJ IDEA版本</h2><p>阅读Spring源码对IntelliJ IDEA版本其实是没有要求的，但是不得不提一下的是如果你的IntelliJ IDEA版本是2017.1及以下的版本的话，那Gradle的版本用3.5的就可以了，用新版的Gradle可能会出问题</p>
+<h2 id="Spring源码编译并导入IDEA"><a href="#Spring源码编译并导入IDEA" class="headerlink" title="Spring源码编译并导入IDEA"></a>Spring源码编译并导入IDEA</h2><p>在下载下来的Spring源码的根目录下有个import-into-idea.md的文件，里面介绍了如何使用将Spring源码导入IDEA，并且讲述了在此过程中应该注意的一些问题，大致步骤如下</p>
+<p>1.注释根目录settings.gradle文件下的jcenter()以及spring-aspects模块<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">pluginManagement &#123;</span><br><span class="line">    repositories &#123;</span><br><span class="line">        // jcenter()</span><br><span class="line">        gradlePluginPortal()</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// include &quot;spring-aspects&quot;</span><br></pre></td></tr></table></figure></p>
+<p>2.注释spring-oxm下spring-oxm.gradle文件的jibx模块<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">// jibx(verbose: true, load: true, binding: bindingXml) &#123;</span><br><span class="line">    // classpathset(dir: sourceSets.test.java.outputDir) &#123;</span><br><span class="line">        // include(name: &quot;**/jibx/**/*&quot;)</span><br><span class="line">    // &#125;</span><br><span class="line">// &#125;</span><br></pre></td></tr></table></figure></p>
+<p>3.预编译spring-oxm模块，使用如下命令(此过程中可能由于网络问题失败 多重试几次)<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gradle :spring-oxm:compileTestJava</span><br></pre></td></tr></table></figure></p>
+<p>4.导入项目到IDEA中，选择使用Gradle构建并配置Gradle环境<br><img src="http://img.blog.csdn.net/20171222120546371?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvUm9iZXJ0b0h1YW5n/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="使用Gradle构建"></p>
+<p><img src="http://img.blog.csdn.net/20171222120610522?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvUm9iZXJ0b0h1YW5n/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="配置Gradle环境"></p>
+<p>5.等待构建完成即可 至此Spring源码阅读环境已搭建完毕</p>
 
       
       
@@ -343,13 +370,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2018/01/08/文章1/">我的文章1</a></p>
+        <p><span>本文标题:</span><a href="/2017/12/22/01.Spring源码深度解析之IDEA源码阅读环境搭建/">01.Spring源码深度解析之IDEA源码阅读环境搭建</a></p>
         <p><span>文章作者:</span><a href="/" title="访问 robertXiao 的个人博客">robertXiao</a></p>
-        <p><span>发布时间:</span>2018年01月08日 - 11时43分</p>
-        <p><span>最后更新:</span>2018年01月08日 - 11时47分</p>
+        <p><span>发布时间:</span>2017年12月22日 - 12时00分</p>
+        <p><span>最后更新:</span>2018年01月08日 - 10时26分</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2018/01/08/文章1/" title="我的文章1">http://robertXiao.com/2018/01/08/文章1/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://robertXiao.com/2018/01/08/文章1/　　作者: robertXiao" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2017/12/22/01.Spring源码深度解析之IDEA源码阅读环境搭建/" title="01.Spring源码深度解析之IDEA源码阅读环境搭建">http://robertXiao.com/2017/12/22/01.Spring源码深度解析之IDEA源码阅读环境搭建/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://robertXiao.com/2017/12/22/01.Spring源码深度解析之IDEA源码阅读环境搭建/　　作者: robertXiao" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script src="/js/clipboard.min.js"></script>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
@@ -362,20 +389,15 @@
 
 <nav id="article-nav">
   
-    <a href="/2018/01/08/文章2/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2018/01/08/文章4/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption"><</strong>
       <div class="article-nav-title">
         
-          我的文章2
+          我的文章4
         
       </div>
     </a>
   
-  
-    <a href="/2018/01/08/文章4/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">我的文章4</div>
-      <strong class="article-nav-caption">></strong>
-    </a>
   
 </nav>
 
@@ -384,7 +406,7 @@
 
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#前言"><span class="toc-number">1.</span> <span class="toc-text">前言</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Spring整体架构"><span class="toc-number">2.</span> <span class="toc-text">Spring整体架构</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Spring源码阅读环境构建"><span class="toc-number">3.</span> <span class="toc-text">Spring源码阅读环境构建</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#下载Spring源码"><span class="toc-number">3.1.</span> <span class="toc-text">下载Spring源码</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#JDK版本"><span class="toc-number">3.2.</span> <span class="toc-text">JDK版本</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Gradle环境"><span class="toc-number">3.3.</span> <span class="toc-text">Gradle环境</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#IntelliJ-IDEA版本"><span class="toc-number">3.4.</span> <span class="toc-text">IntelliJ IDEA版本</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Spring源码编译并导入IDEA"><span class="toc-number">3.5.</span> <span class="toc-text">Spring源码编译并导入IDEA</span></a></li></ol></li></ol>
 </div>
 <input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
 
@@ -451,15 +473,13 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2018/01/08/文章2/" title="上一篇: 我的文章2">
+            <a href="/2018/01/08/文章4/" title="上一篇: 我的文章4">
                 <i class="fa fa-angle-left"></i>
             </a>
         
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
         
-            <a href="/2018/01/08/文章4/" title="下一篇: 我的文章4">
-                <i class="fa fa-angle-right"></i>
-            </a>
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
     </div>
     <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2018/01/08/文章3/">我的文章3</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/01/08/文章2/">我的文章2</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/01/08/文章1/">我的文章1</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/01/08/文章4/">我的文章4</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/12/22/01.Spring源码深度解析之IDEA源码阅读环境搭建/">01.Spring源码深度解析之IDEA源码阅读环境搭建</a></li></ul>
